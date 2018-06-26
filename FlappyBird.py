@@ -23,6 +23,7 @@ class GameEnv:
         self.PIPE_LIST = {}                     # 管道图片
         self.IMAGES = {}                        # 图片
         self.SOUNDS = {}                        # 声音素材
+        self.HITMASKS = {}                      # 图片中每个像素点的透明度
 
         self.playerx, self.playery = 0., 0.     # 小鸟坐标
         self.score = 0                          # 得分
@@ -65,6 +66,18 @@ class GameEnv:
             pygame.transform.rotate(
                 pygame.image.load(self.PIPE_LIST[randpipe]).convert_alpha(), 180),
             pygame.image.load(self.PIPE_LIST[randpipe]).convert_alpha(),
+        )
+        # hismask for pipes
+        self.HITMASKS['pipe'] = (
+            self.getHitmask(self.IMAGES['pipe'][0]),
+            self.getHitmask(self.IMAGES['pipe'][1]),
+        )
+
+        # hitmask for player
+        self.HITMASKS['player'] = (
+            self.getHitmask(self.IMAGES['player'][0]),
+            self.getHitmask(self.IMAGES['player'][1]),
+            self.getHitmask(self.IMAGES['player'][2]),
         )
         # 生成两个新的管道
         newPipe1 = self.getRandomPipe()
@@ -182,16 +195,16 @@ class GameEnv:
 
     def checkCrash(self, upperPipes, lowerPipes):
         """returns True if player collders with base or pipes."""
-        w = self.IMAGES['player'][0].get_width()
-        h = self.IMAGES['player'][0].get_height()
+        playerw = self.IMAGES['player'][0].get_width()
+        playerh = self.IMAGES['player'][0].get_height()
 
         # if player crashes into ground
         if self.playery + self.playerx >= self.BASEY - 1:
             return [True, True]
         else:
 
-            playerRect = pygame.Rect(player['x'], player['y'],
-                                     player['w'], player['h'])
+            playerRect = pygame.Rect(self.playerx, self.playery,
+                                     playerw, playerh)
             pipeW = self.IMAGES['pipe'][0].get_width()
             pipeH = self.IMAGES['pipe'][0].get_height()
 
@@ -206,10 +219,35 @@ class GameEnv:
                 lHitmask = self.HITMASKS['pipe'][1]
 
                 # if bird collided with upipe or lpipe
-                uCollide = pixelCollision(playerRect, uPipeRect, pHitMask, uHitmask)
-                lCollide = pixelCollision(playerRect, lPipeRect, pHitMask, lHitmask)
+                uCollide = self.pixelCollision(playerRect, uPipeRect, pHitMask, uHitmask)
+                lCollide = self.pixelCollision(playerRect, lPipeRect, pHitMask, lHitmask)
 
                 if uCollide or lCollide:
                     return [True, False]
 
         return [False, False]
+
+    def getHitmask(self, image):
+        """returns a hitmask using an image's alpha."""
+        mask = []
+        for x in range(image.get_width()):
+            mask.append([])
+            for y in range(image.get_height()):
+                mask[x].append(bool(image.get_at((x, y))[3]))
+        return mask
+
+    def pixelCollision(self, rect1, rect2, hitmask1, hitmask2):
+        """Checks if two objects collide and not just their rects"""
+        rect = rect1.clip(rect2)
+
+        if rect.width == 0 or rect.height == 0:
+            return False
+
+        x1, y1 = rect.x - rect1.x, rect.y - rect1.y
+        x2, y2 = rect.x - rect2.x, rect.y - rect2.y
+
+        for x in range(rect.width):
+            for y in range(rect.height):
+                if hitmask1[x1 + x][y1 + y] and hitmask2[x2 + x][y2 + y]:
+                    return True
+        return False
