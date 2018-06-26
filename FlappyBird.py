@@ -26,6 +26,8 @@ class GameEnv:
         self.HITMASKS = {}                      # 图片中每个像素点的透明度
 
         self.playerx, self.playery = 0., 0.     # 小鸟坐标
+        self.loopIter = 0                       # 小鸟三状态切换
+        self.playerIndexGen = cycle([0, 1, 2, 1])   # 循环
         self.score = 0                          # 得分
         self.playerIndex = 0                    # 小鸟状态（三状态）
 
@@ -39,11 +41,26 @@ class GameEnv:
         self.playerRotThr = 20  # rotation threshold
         self.playerFlapAcc = -9  # players speed on flapping
         self.playerFlapped = False  # True when player flaps
+        self.pipeVelX = -4          #
+
+        self.upperPipes = []                    # 上管道坐标
+        self.lowerPipes = []                    # 下管道坐标
+        self.basex = 0                          # basex
+        self.baseShift = 100
+
+        pygame.init()
+        self.FPSCLOCK = pygame.time.Clock()
+        self.SCREEN = pygame.display.set_mode((self.SCREENWIDTH, self.SCREENHEIGHT))
+        pygame.display.set_caption('Flappy Bird')
+        # 读取素材
+        self.loadImage()
+        self.loadSound()
 
         pass
 
     def render(self):
-        pass
+        pygame.display.update()
+        self.FPSCLOCK.tick(self.FPS)
 
     def reset(self):
         """
@@ -83,12 +100,12 @@ class GameEnv:
         newPipe1 = self.getRandomPipe()
         newPipe2 = self.getRandomPipe()
         # list of upper pipes
-        upperPipes = [
+        self.upperPipes = [
             {'x': self.SCREENWIDTH + 200, 'y': newPipe1[0]['y']},
             {'x': self.SCREENWIDTH + 200 + (self.SCREENWIDTH / 2), 'y': newPipe2[0]['y']},
         ]
         # list of lowerpipe
-        lowerPipes = [
+        self.lowerPipes = [
             {'x': self.SCREENWIDTH + 200, 'y': newPipe1[1]['y']},
             {'x': self.SCREENWIDTH + 200 + (self.SCREENWIDTH / 2), 'y': newPipe2[1]['y']},
         ]
@@ -107,15 +124,88 @@ class GameEnv:
         self.playerRotThr = 20  # rotation threshold
         self.playerFlapAcc = -9  # players speed on flapping
         self.playerFlapped = False  # True when player flaps
-
+        self.basex = 0
 
     def step(self, action):
         if np.argmax(action) == 1:
-            self.playerVelY = self.playerFlapAcc
-            self.playerFlapped = True
+            self.playerVelY = self.playerFlapAcc            # 小鸟沿着Y轴方向的速度
+            self.playerFlapped = True                       # 在flappy状态
+
+        # check for score
+        playerMidPos = self.playerx + self.IMAGES['player'][0].get_width() / 2
+        for pipe in self.upperPipes:
+            pipeMidPos = pipe['x'] + self.IMAGES['pipe'][0].get_width() / 2
+            if pipeMidPos <= playerMidPos < pipeMidPos + 4:
+                self.score += 1
+                # self.SOUNDS['point'].play()
+
+        # playerIndex basex change
+        if (self.loopIter + 1) % 3 == 0:
+            self.playerIndex = next(self.playerIndexGen)
+        loopIter = (self.loopIter + 1) % 30
+        basex = -((-self.basex + 100) % self.baseShift)
+
+        # rotate the player
+        if self.playerRot > -90:
+            self.playerRot -= self.playerVelRot
+
+        # player's movement
+        if self.playerVelY < self.playerMaxVelY and not self.playerFlapped:
+            self.playerVelY += self.playerAccY
+        if self.playerFlapped:
+            self.playerFlapped = False
+            # more rotation to cover the threshold (calculated in visible rotation)
+            self.playerRot = 45
+
+        playerHeight = self.IMAGES['player'][self.playerIndex].get_height()
+        self.playery += min(self.playerVelY, self.BASEY - self.playery - playerHeight)
+
+        # move pipes to left
+        for uPipe, lPipe in zip(self.upperPipes, self.lowerPipes):
+            uPipe['x'] += self.pipeVelX
+            lPipe['x'] += self.pipeVelX
+
+        # add new pipe when first pipe is about to touch left of screen
+        if 0 < self.upperPipes[0]['x'] < 5:
+            newPipe = self.getRandomPipe()
+            self.upperPipes.append(newPipe[0])
+            self.lowerPipes.append(newPipe[1])
+
+        # remove first pipe if its out of the screen
+        if self.upperPipes[0]['x'] < -self.IMAGES['pipe'][0].get_width():
+            self.upperPipes.pop(0)
+            self.lowerPipes.pop(0)
+
+        # draw sprites
+        self.SCREEN.blit(self.IMAGES['background'], (0,0))
+
+        for uPipe, lPipe in zip(self.upperPipes, self.lowerPipes):
+            self.SCREEN.blit(self.IMAGES['pipe'][0], (uPipe['x'], uPipe['y']))
+            self.SCREEN.blit(self.IMAGES['pipe'][1], (lPipe['x'], lPipe['y']))
+
+        self.SCREEN.blit(self.IMAGES['base'], (basex, self.BASEY))
+        # print score so player overlaps the score
+        self.showScore(self.score)
+
+        # Player rotation has a threshold
+        visibleRot = self.playerRotThr
+        if self.playerRot <= self.playerRotThr:
+            visibleRot = self.playerRot
+
+        playerSurface = pygame.transform.rotate(self.IMAGES['player'][self.playerIndex], visibleRot)
+        self.SCREEN.blit(playerSurface, (self.playerx, self.playery))
+
+        image_data = pygame.surfarray.array3d(pygame.display.get_surface())
 
         # check for crash here
-        crashTest = self.checkCrash()
+        crashTest = self.checkCrash(self.upperPipes, self.lowerPipes)
+        if crashTest[0]:
+            return image_data, -100000, True
+
+        return image_data, 1, False
+
+        
+
 
     def loadImage(self):
         """
@@ -170,7 +260,7 @@ class GameEnv:
         # base (ground) sprite
         self.IMAGES['base'] = pygame.image.load('assets/sprites/base.png').convert_alpha()
 
-    def loadSOund(self):
+    def loadSound(self):
         """
         读取声音素材
         :return:
@@ -251,3 +341,25 @@ class GameEnv:
                 if hitmask1[x1 + x][y1 + y] and hitmask2[x2 + x][y2 + y]:
                     return True
         return False
+
+    def showScore(self, score):
+        """displays score in center of screen"""
+        scoreDigits = [int(x) for x in list(str(score))]
+        totalWidth = 0  # total width of all numbers to be printed
+
+        for digit in scoreDigits:
+            totalWidth += self.IMAGES['numbers'][digit].get_width()
+
+        Xoffset = (self.SCREENWIDTH - totalWidth) / 2
+
+        for digit in scoreDigits:
+            self.SCREEN.blit(self.IMAGES['numbers'][digit], (Xoffset, self.SCREENHEIGHT * 0.1))
+            Xoffset += self.IMAGES['numbers'][digit].get_width()
+
+if __name__ == '__main__':
+    env = GameEnv()
+    env.reset()
+    while True:
+        next_state, reward, _ = env.step([0, 1])
+        if _:
+            break

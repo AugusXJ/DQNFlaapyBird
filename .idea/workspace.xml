@@ -13,16 +13,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DQNFlaapyBird$flappy.coverage" NAME="flappy Coverage Results" MODIFIED="1529979264678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../FlapPyBird" />
-    <SUITE FILE_PATH="coverage/DQNFlaapyBird$FlappyBird.coverage" NAME="FlappyBird Coverage Results" MODIFIED="1529897084785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DQNFlaapyBird$flappy.coverage" NAME="flappy Coverage Results" MODIFIED="1530010961733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../FlapPyBird" />
+    <SUITE FILE_PATH="coverage/DQNFlaapyBird$FlappyBird.coverage" NAME="FlappyBird Coverage Results" MODIFIED="1530013193781" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="flappy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="458" selection-start-line="458" selection-end-line="472" selection-end-column="16" />
+            <state relative-caret-position="1704">
+              <caret line="317" column="50" selection-start-line="317" selection-start-column="50" selection-end-line="317" selection-end-column="50" />
               <folding>
                 <element signature="e#11345#13214#0" />
               </folding>
@@ -33,12 +33,10 @@
       <file leaf-file-name="FlappyBird.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FlappyBird.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1877">
-              <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+            <state relative-caret-position="606">
+              <caret line="360" selection-start-line="360" selection-end-line="360" />
               <folding>
                 <element signature="e#74#87#0" expanded="true" />
-                <element signature="e#4165#6471#0" />
-                <element signature="e#6443#6598#0" />
               </folding>
             </state>
           </provider>
@@ -57,6 +55,8 @@
     <findStrings>
       <find>HITMASKS</find>
       <find>getHitmask</find>
+      <find>playerIndex</find>
+      <find>action</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -65,6 +65,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/../FlapPyBird/flappy.py" />
         <option value="$PROJECT_DIR$/FlappyBird.py" />
       </list>
     </option>
@@ -79,8 +80,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="169" />
+    <option name="x" value="-1" />
+    <option name="y" value="267" />
     <option name="width" value="1803" />
     <option name="height" value="789" />
   </component>
@@ -116,7 +117,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/work/liuhai_project/sf-hairstyle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DeepLearningFlappyBird" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -138,7 +139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.flappy">
+  <component name="RunManager" selected="Python.FlappyBird">
     <configuration name="FlappyBird" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DQNFlaapyBird" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,8 +184,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.flappy" />
         <item itemvalue="Python.FlappyBird" />
+        <item itemvalue="Python.flappy" />
       </list>
     </recent_temporary>
   </component>
@@ -208,17 +209,17 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Event Log" order="5" side_tool="true" weight="0.32982844" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32925472" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32887402" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27201784" visible="true" weight="0.257886" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27090302" visible="true" weight="0.257886" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info id="Structure" order="1" sideWeight="0.72798216" side_tool="true" visible="true" weight="0.257886" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
+      <window_info id="Structure" order="1" sideWeight="0.729097" side_tool="true" weight="0.257886" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39018953" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -227,6 +228,29 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.27090302" visible="true" weight="0.257886" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.729097" side_tool="true" visible="true" weight="0.257886" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32925472" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39910814" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="right" id="Event Log" order="5" side_tool="true" weight="0.32982844" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -239,29 +263,86 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../FlapPyBird/flappy.py</url>
-          <line>427</line>
-          <option name="timeStamp" value="1" />
+          <line>63</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../FlapPyBird/flappy.py</url>
-          <line>397</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/FlappyBird.py</url>
+          <line>70</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="21" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="BASEY" />
-        <watch expression="image.get_at((x,y))" />
-        <watch expression="image.get_height()" />
-        <watch expression="int(BASEY * 0.6 - PIPEGAPSIZE)" />
-        <watch expression="gapY - pipeHeight" />
-        <watch expression="gapY + PIPEGAPSIZE" />
+        <watch expression="FPSCLOCK" />
+        <watch expression="self.BACKGROUNDS_LIST" />
+        <watch expression="self.BACKGROUNDS_LIST.keys()" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5056">
+          <caret line="321" column="23" selection-start-line="321" selection-start-column="23" selection-end-line="321" selection-end-column="23" />
+          <folding>
+            <element signature="e#11345#13214#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3152">
+          <caret line="201" column="8" lean-forward="true" selection-start-line="201" selection-start-column="8" selection-end-line="201" selection-end-column="8" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4992">
+          <caret line="317" column="21" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="21" />
+          <folding>
+            <element signature="e#11345#13214#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1888">
+          <caret line="122" column="18" selection-start-line="122" selection-start-column="18" selection-end-line="122" selection-end-column="18" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6352">
+          <caret line="458" selection-start-line="458" selection-end-line="472" selection-end-column="16" />
+          <folding>
+            <element signature="e#11345#13214#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3888">
+          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3184">
@@ -278,8 +359,6 @@
           <caret line="188" column="34" selection-start-line="188" selection-start-column="34" selection-end-line="188" selection-end-column="34" />
           <folding>
             <element signature="e#74#87#0" expanded="true" />
-            <element signature="e#4165#6471#0" />
-            <element signature="e#6443#6598#0" />
           </folding>
         </state>
       </provider>
@@ -300,8 +379,6 @@
           <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding>
             <element signature="e#74#87#0" expanded="true" />
-            <element signature="e#4165#6471#0" />
-            <element signature="e#6443#6598#0" />
           </folding>
         </state>
       </provider>
@@ -327,24 +404,53 @@
     <entry file="file://$PROJECT_DIR$/assets/sprites/pipe-red.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/assets/sprites/base.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="458" selection-start-line="458" selection-end-line="472" selection-end-column="16" />
+        <state relative-caret-position="1704">
+          <caret line="317" column="50" selection-start-line="317" selection-start-column="50" selection-end-line="317" selection-end-column="50" />
           <folding>
             <element signature="e#11345#13214#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/pygame/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="166" column="4" selection-start-line="166" selection-start-column="4" selection-end-line="166" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-2086390221/pygame/display.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/matplotlib/backends/backend_wxagg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1727">
+          <caret line="264" selection-start-line="264" selection-end-line="264" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FlappyBird.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1877">
-          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+        <state relative-caret-position="606">
+          <caret line="360" selection-start-line="360" selection-end-line="360" />
           <folding>
             <element signature="e#74#87#0" expanded="true" />
-            <element signature="e#4165#6471#0" />
-            <element signature="e#6443#6598#0" />
           </folding>
         </state>
       </provider>
