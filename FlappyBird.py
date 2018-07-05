@@ -32,14 +32,14 @@ class GameEnv:
         self.playerIndex = 0                    # 小鸟状态（三状态）
 
         # player velocity, max velocity, downward accleration, accleration on flap
-        self.playerVelY = -9  # player's velocity along Y, default same as playerFlapped
+        self.playerVelY = 0  # player's velocity along Y, default same as playerFlapped
         self.playerMaxVelY = 10  # max vel along Y, max descend speed
         self.playerMinVelY = -8  # min vel along Y, max ascend speed
         self.playerAccY = 1  # players downward accleration
         self.playerRot = 45  # player's rotation
         self.playerVelRot = 3  # angular speed
         self.playerRotThr = 20  # rotation threshold
-        self.playerFlapAcc = -9  # players speed on flapping
+        self.playerFlapAcc = -1  # players speed on flapping
         self.playerFlapped = False  # True when player flaps
         self.pipeVelX = -4          #
 
@@ -68,17 +68,17 @@ class GameEnv:
         :return:
         """
         # 获取背景
-        randBg = random.choice(self.BACKGROUNDS_LIST.keys())
+        randBg = random.choice(list(self.BACKGROUNDS_LIST.keys()))
         self.IMAGES['background'] = pygame.image.load(self.BACKGROUNDS_LIST[randBg]).convert()
         # 获取小鸟颜色
-        randPlayer = random.choice(self.PLAYERS_LIST.keys())
+        randPlayer = random.choice(list(self.PLAYERS_LIST.keys()))
         self.IMAGES['player'] = (
             pygame.image.load(self.PLAYERS_LIST[randPlayer][0]).convert_alpha(),
             pygame.image.load(self.PLAYERS_LIST[randPlayer][1]).convert_alpha(),
             pygame.image.load(self.PLAYERS_LIST[randPlayer][2]).convert_alpha(),
         )
         # 获取管道颜色
-        randpipe = random.randint(self.PIPE_LIST.keys())
+        randpipe = random.choice(list(self.PIPE_LIST.keys()))
         self.IMAGES['pipe'] = (
             pygame.transform.rotate(
                 pygame.image.load(self.PIPE_LIST[randpipe]).convert_alpha(), 180),
@@ -115,18 +115,23 @@ class GameEnv:
             int((self.SCREENHEIGHT - self.IMAGES['player'][0].get_height()) / 2)
         pipeVelX = -4
         # player velocity, max velocity, downward accleration, accleration on flap
-        self.playerVelY = -9  # player's velocity along Y, default same as playerFlapped
+        self.playerVelY = 0  # player's velocity along Y, default same as playerFlapped
         self.playerMaxVelY = 10  # max vel along Y, max descend speed
         self.playerMinVelY = -8  # min vel along Y, max ascend speed
         self.playerAccY = 1  # players downward accleration
-        self.playerRot = 45  # player's rotation
+        self.playerRot = 0  # player's rotation
         self.playerVelRot = 3  # angular speed
         self.playerRotThr = 20  # rotation threshold
         self.playerFlapAcc = -9  # players speed on flapping
         self.playerFlapped = False  # True when player flaps
         self.basex = 0
+        self.baseShift = self.IMAGES['base'].get_width() - self.IMAGES['background'].get_width()
+
+        image_data = pygame.surfarray.array3d(pygame.display.get_surface())
+        return image_data
 
     def step(self, action):
+        # print(action)
         if np.argmax(action) == 1:
             self.playerVelY = self.playerFlapAcc            # 小鸟沿着Y轴方向的速度
             self.playerFlapped = True                       # 在flappy状态
@@ -143,7 +148,7 @@ class GameEnv:
         if (self.loopIter + 1) % 3 == 0:
             self.playerIndex = next(self.playerIndexGen)
         loopIter = (self.loopIter + 1) % 30
-        basex = -((-self.basex + 100) % self.baseShift)
+        self.basex = -((-self.basex + 100) % self.baseShift)
 
         # rotate the player
         if self.playerRot > -90:
@@ -183,7 +188,7 @@ class GameEnv:
             self.SCREEN.blit(self.IMAGES['pipe'][0], (uPipe['x'], uPipe['y']))
             self.SCREEN.blit(self.IMAGES['pipe'][1], (lPipe['x'], lPipe['y']))
 
-        self.SCREEN.blit(self.IMAGES['base'], (basex, self.BASEY))
+        self.SCREEN.blit(self.IMAGES['base'], (self.basex, self.BASEY))
         # print score so player overlaps the score
         self.showScore(self.score)
 
@@ -289,7 +294,7 @@ class GameEnv:
         playerh = self.IMAGES['player'][0].get_height()
 
         # if player crashes into ground
-        if self.playery + self.playerx >= self.BASEY - 1:
+        if self.playery + playerh >= self.BASEY - 1 or self.playery < 0:
             return [True, True]
         else:
 
@@ -357,9 +362,12 @@ class GameEnv:
             Xoffset += self.IMAGES['numbers'][digit].get_width()
 
 if __name__ == '__main__':
+    action_space = [[1, 0], [0, 1], [1,0]]
     env = GameEnv()
     env.reset()
     while True:
-        next_state, reward, _ = env.step([0, 1])
+        # next_state, reward, _ = env.step([1, 0])
+        next_state, reward, _ = env.step(random.choice(action_space))
+        env.render()
         if _:
             break
