@@ -5,32 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/DQN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FlappyBird.py" beforeDir="false" afterPath="$PROJECT_DIR$/FlappyBird.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/0.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/background-day.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/background-day.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/background-night.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/background-night.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/base.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/base.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/bluebird-downflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/bluebird-downflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/bluebird-midflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/bluebird-midflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/bluebird-upflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/bluebird-upflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/gameover.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/gameover.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/message.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/message.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/pipe-green.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/pipe-green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/pipe-red.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/pipe-red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/redbird-downflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/redbird-downflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/redbird-midflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/redbird-midflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/redbird-upflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/redbird-upflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/yellowbird-downflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/yellowbird-downflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/yellowbird-midflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/yellowbird-midflap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sprites/yellowbird-upflap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sprites/yellowbird-upflap.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DQNFlaapyBird$flappy.coverage" NAME="flappy Coverage Results" MODIFIED="1530156346354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../FlapPyBird" />
-    <SUITE FILE_PATH="coverage/DQNFlaapyBird$DQN.coverage" NAME="DQN Coverage Results" MODIFIED="1531445264693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DQNFlaapyBird$DQN.coverage" NAME="DQN Coverage Results" MODIFIED="1531464929748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DQNFlaapyBird$FlappyBird.coverage" NAME="FlappyBird Coverage Results" MODIFIED="1531445223457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FavoritesManager">
@@ -49,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DQN.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DQN.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="159" column="30" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="30" />
+            <state relative-caret-position="191">
+              <caret line="217" column="67" selection-start-line="217" selection-start-column="67" selection-end-line="217" selection-end-column="67" />
               <folding>
                 <element signature="e#74#91#0" expanded="true" />
               </folding>
@@ -61,11 +35,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlappyBird.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="state_ops.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3776">
+              <caret line="247" column="4" selection-start-line="247" selection-start-column="4" selection-end-line="247" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gen_math_ops.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/gen_math_ops.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2432">
+              <caret line="165" column="4" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variables.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/variables.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1712">
+              <caret line="124" column="24" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlappyBird.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FlappyBird.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+            <state relative-caret-position="944">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="e#74#87#0" expanded="true" />
               </folding>
@@ -100,7 +101,15 @@
       <find>png</find>
       <find>step</find>
       <find>reward</find>
+      <find>print</find>
       <find>render</find>
+      <find>anneling_steps</find>
+      <find>updateTargetGraph</find>
+      <find>anneling_episodes</find>
+      <find>e</find>
+      <find>total_steps</find>
+      <find>targetOps</find>
+      <find>step_plus</find>
     </findStrings>
     <replaceStrings>
       <replace>jpg</replace>
@@ -113,8 +122,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../FlapPyBird/flappy.py" />
-        <option value="$PROJECT_DIR$/DQN.py" />
         <option value="$PROJECT_DIR$/FlappyBird.py" />
+        <option value="$PROJECT_DIR$/DQN.py" />
       </list>
     </option>
   </component>
@@ -138,6 +147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,21 +155,15 @@
               <item name="DQNFlaapyBird" type="b2602c69:ProjectViewProjectNode" />
               <item name="DQNFlaapyBird" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DQNFlaapyBird" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DQNFlaapyBird" type="462c0819:PsiDirectoryNode" />
-              <item name="dqn" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/work/liuhai_project/hairstyle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -281,24 +285,24 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32998884" />
       <window_info anchor="right" id="Event Log" order="5" side_tool="true" weight="0.32982844" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32887402" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32998884" />
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" internal_type="SLIDING" order="2" type="SLIDING" weight="0.32887402" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32998884" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.34671125" visible="true" weight="0.2573326" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32982844" />
       <window_info id="Structure" order="1" sideWeight="0.6532887" side_tool="true" weight="0.2573326" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37235227" />
       <window_info id="Favorites" order="2" sideWeight="0.6510591" side_tool="true" weight="0.2573326" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37235227" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32998884" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,28 +313,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/DQN.py</url>
-          <line>117</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/FlappyBird.py</url>
-          <line>302</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="72" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="s" language="Python" />
-        <watch expression="r" />
-        <watch expression="a" />
-        <watch expression="rAll" />
-        <watch expression="self.playery" />
-        <watch expression="crashTest" />
+        <watch expression="tfVars" />
+        <watch expression="idx + total_vars//2" />
+        <watch expression="sess.run(total_steps)" />
       </configuration>
     </watches-manager>
   </component>
@@ -349,14 +338,47 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/variables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1712">
+          <caret line="124" column="24" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="944">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="159" column="30" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="30" />
+          <folding>
+            <element signature="e#74#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3344">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+          <folding>
+            <element signature="e#74#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../FlapPyBird/flappy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2272">
           <caret line="197" column="77" selection-start-line="197" selection-start-column="16" selection-end-line="197" selection-end-column="77" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -381,10 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2272">
           <caret line="197" column="77" lean-forward="true" selection-start-line="197" selection-start-column="16" selection-end-line="197" selection-end-column="77" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -402,10 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4992">
           <caret line="317" column="50" selection-start-line="317" selection-start-column="50" selection-end-line="317" selection-end-column="50" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -423,10 +437,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5056">
           <caret line="321" column="23" selection-start-line="321" selection-start-column="23" selection-end-line="321" selection-end-column="23" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -444,10 +454,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4992">
           <caret line="317" column="21" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="21" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -465,10 +471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6352">
           <caret line="458" selection-start-line="458" selection-end-line="472" selection-end-column="16" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -486,10 +488,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3184">
           <caret line="204" column="4" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="4" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -507,10 +505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3392">
           <caret line="217" column="78" lean-forward="true" selection-start-line="217" selection-start-column="6" selection-end-line="217" selection-end-column="78" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -573,13 +567,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21376">
-          <caret line="1366" column="4" selection-start-line="1366" selection-start-column="4" selection-end-line="1366" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/gen_array_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -605,16 +592,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1567">
           <caret line="196" column="33" selection-start-line="196" selection-start-column="33" selection-end-line="196" selection-end-column="33" />
-          <folding>
-            <element signature="e#4504#6489#0" />
-            <element signature="e#11345#13214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/sprites/0_new.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/sprites/0_new.png" />
     <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/PIL/JpegImagePlugin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -622,9 +603,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/sprites/0_new.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/sprites/0_new.jpg" />
     <entry file="file://$PROJECT_DIR$/assets/sprites/pipe-red.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -647,25 +626,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dqn/checkpoint">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DQN.py">
+    <entry file="file://$PROJECT_DIR$/dqn/checkpoint" />
+    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="159" column="30" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="30" />
+        <state relative-caret-position="944">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
-            <element signature="e#74#91#0" expanded="true" />
+            <element signature="e#74#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlappyBird.py">
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="2067">
+          <caret line="1260" column="4" selection-start-line="1260" selection-start-column="4" selection-end-line="1260" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/variables.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1712">
+          <caret line="124" column="24" selection-start-line="124" selection-start-column="15" selection-end-line="124" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/gen_math_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2432">
+          <caret line="165" column="4" selection-start-line="165" selection-start-column="4" selection-end-line="165" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/client/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="883" selection-start-line="883" selection-end-line="883" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/software/anaconda3/envs/tensorflow/lib/python3.5/site-packages/tensorflow/python/ops/state_ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3776">
+          <caret line="247" column="4" selection-start-line="247" selection-start-column="4" selection-end-line="247" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="217" column="67" selection-start-line="217" selection-start-column="67" selection-end-line="217" selection-end-column="67" />
           <folding>
-            <element signature="e#74#87#0" expanded="true" />
+            <element signature="e#74#91#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -145,7 +145,7 @@ class GameEnv:
             pipeMidPos = pipe['x'] + self.IMAGES['pipe'][0].get_width() / 2
             if pipeMidPos <= playerMidPos < pipeMidPos + 4:
                 self.score += 1
-                reward += 10
+                reward += 100
                 # self.SOUNDS['point'].play()
 
         # playerIndex basex change
@@ -209,7 +209,7 @@ class GameEnv:
         # check for crash here
         crashTest = self.checkCrash(self.upperPipes, self.lowerPipes)
         if crashTest[0]:
-            reward -= 100
+            reward -= 1000
             return image_data, reward, True
 
         return image_data, reward+1, False
