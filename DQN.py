@@ -7,19 +7,16 @@
 import FlappyBird
 import numpy as np
 import random
-import itertools
-import scipy.misc
-import matplotlib.pyplot as plt
-import matplotlib
 import tensorflow as tf
 import os
 import time
+from PIL import Image
 
 
 class Qnetwork():
     def __init__(self, h_size):
-        self.scalarInput = tf.placeholder(shape=[None, 147456], dtype=tf.float32)
-        self.imageIn = tf.reshape(self.scalarInput, shape=[-1, 288, 512, 3])
+        self.scalarInput = tf.placeholder(shape=[None, 21168], dtype=tf.float32)
+        self.imageIn = tf.reshape(self.scalarInput, shape=[-1, img_height, img_weight, 3])
         self.conv1 = tf.contrib.layers.convolution2d(
             inputs=self.imageIn, num_outputs=32, kernel_size=[8, 8], stride=[4, 4],
             padding='VALID', biases_initializer=None
@@ -95,7 +92,10 @@ def processState(states):
     :param states:
     :return:
     """
-    return np.reshape(states, [147456])
+    img = Image.fromarray(np.uint8(states))
+    img = img.resize((img_height, img_weight))
+    states = np.asarray(img)
+    return np.reshape(states, [21168])
 
 batch_size = 32
 update_freq = 4             # 每隔多少步更新一次模型参数
@@ -110,10 +110,12 @@ load_model = False          # 是否读取之前训练的模型
 path = "./dqn"              # 模型存储的路径
 h_size = 512                # DQN网络最后的全连接层隐含节点数
 tau = 0.001                 # target DQN向主DQN学习的速率
+img_height = 84
+img_weight = 84
 
 
 if __name__ == '__main__':
-    env = FlappyBird.env()
+    env = FlappyBird.GameEnv()
     mainQN = Qnetwork(h_size)
     targetQN = Qnetwork(h_size)
     init = tf.global_variables_initializer()
@@ -147,16 +149,18 @@ if __name__ == '__main__':
             while j < max_epLength:
                 j += 1
                 if np.random.rand(1) < e or total_steps < pre_train_steps:
-                    a = np.random.randint(0, 4)
+                    a = np.random.randint(0, env.actions)
                 else:
                     a = sess.run(mainQN.predict, feed_dict={mainQN.scalarInput: [s]})[0]
                 s1, r, d = env.step(a)
+                # env.render()
                 s1 = processState(s1)
                 total_steps += 1
                 episodeBuffer.add(np.reshape(np.array([s, a, r, s1, d]), [1, 5]))
                 if total_steps > pre_train_steps:
+                    print("training................")
                     if e > endE:
-                        e -= stepDrop
+                        e -= stepDrop               # 降低学习率
                     if total_steps % update_freq == 0:                                # 开始训练
                         trainBatch = myBuffer.sample(batch_size)
                         A = sess.run(mainQN.predict,
@@ -175,6 +179,7 @@ if __name__ == '__main__':
                 s = s1
                 if d is True:
                     break
+            print(rAll)
             myBuffer.add(episodeBuffer.buffer)
             rList.append(rAll)
             if i > 0 and i % 25 == 0:

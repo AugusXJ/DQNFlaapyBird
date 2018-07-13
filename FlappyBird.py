@@ -13,6 +13,7 @@ import numpy as np
 
 class GameEnv:
     def __init__(self):
+        self.actions = 2                        # 动作空间
         self.FPS = 30
         self.SCREENWIDTH = 288
         self.SCREENHEIGHT = 512
@@ -131,8 +132,10 @@ class GameEnv:
         return image_data
 
     def step(self, action):
+        reward = 0
         # print(action)
-        if np.argmax(action) == 1:
+        # if np.argmax(action) == 1:
+        if action == 1:
             self.playerVelY = self.playerFlapAcc            # 小鸟沿着Y轴方向的速度
             self.playerFlapped = True                       # 在flappy状态
 
@@ -142,6 +145,7 @@ class GameEnv:
             pipeMidPos = pipe['x'] + self.IMAGES['pipe'][0].get_width() / 2
             if pipeMidPos <= playerMidPos < pipeMidPos + 4:
                 self.score += 1
+                reward += 10
                 # self.SOUNDS['point'].play()
 
         # playerIndex basex change
@@ -205,9 +209,10 @@ class GameEnv:
         # check for crash here
         crashTest = self.checkCrash(self.upperPipes, self.lowerPipes)
         if crashTest[0]:
-            return image_data, -100000, True
+            reward -= 100
+            return image_data, reward, True
 
-        return image_data, 1, False
+        return image_data, reward+1, False
 
         
 
@@ -221,49 +226,50 @@ class GameEnv:
         self.PLAYERS_LIST = {
             'red':
                 (
-                    'assets/sprites/redbird-upflap.png',
-                    'assets/sprites/redbird-midflap.png',
-                    'assets/sprites/redbird-downflap.png',
+                    'assets/sprites/redbird-upflap.jpg',
+                    'assets/sprites/redbird-midflap.jpg',
+                    'assets/sprites/redbird-downflap.jpg',
                 ),
             'blue':
                 (
-                    'assets/sprites/bluebird-upflap.png',
-                    'assets/sprites/bluebird-midflap.png',
-                    'assets/sprites/bluebird-downflap.png',
+                    'assets/sprites/bluebird-upflap.jpg',
+                    'assets/sprites/bluebird-midflap.jpg',
+                    'assets/sprites/bluebird-downflap.jpg',
                 ),
             'yellow':
                 (
-                    'assets/sprites/yellowbird-upflap.png',
-                    'assets/sprites/yellowbird-midflap.png',
-                    'assets/sprites/yellowbird-downflap.png',
+                    'assets/sprites/yellowbird-upflap.jpg',
+                    'assets/sprites/yellowbird-midflap.jpg',
+                    'assets/sprites/yellowbird-downflap.jpg',
                 )
         }
         self.BACKGROUNDS_LIST = {
-            'day': 'assets/sprites/background-day.png',
-            'night': 'assets/sprites/background-night.png',
+            'day': 'assets/sprites/background-day.jpg',
+            'night': 'assets/sprites/background-night.jpg',
         }
         self.PIPE_LIST = {
-            'green': 'assets/sprites/pipe-green.png',
-            'red': 'assets/sprites/pipe-red.png',
+            'green': 'assets/sprites/pipe-green.jpg',
+            'red': 'assets/sprites/pipe-red.jpg',
         }
+        from PIL import Image
         self.IMAGES['numbers'] = (
-            pygame.image.load('assets/sprites/0.png').convert_alpha(),
-            pygame.image.load('assets/sprites/1.png').convert_alpha(),
-            pygame.image.load('assets/sprites/2.png').convert_alpha(),
-            pygame.image.load('assets/sprites/3.png').convert_alpha(),
-            pygame.image.load('assets/sprites/4.png').convert_alpha(),
-            pygame.image.load('assets/sprites/5.png').convert_alpha(),
-            pygame.image.load('assets/sprites/6.png').convert_alpha(),
-            pygame.image.load('assets/sprites/7.png').convert_alpha(),
-            pygame.image.load('assets/sprites/8.png').convert_alpha(),
-            pygame.image.load('assets/sprites/9.png').convert_alpha()
+            pygame.image.load('assets/sprites/0.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/1.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/2.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/3.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/4.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/5.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/6.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/7.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/8.jpg').convert_alpha(),
+            pygame.image.load('assets/sprites/9.jpg').convert_alpha()
         )
         # game over sprite
-        self.IMAGES['gameover'] = pygame.image.load('assets/sprites/gameover.png').convert_alpha()
+        self.IMAGES['gameover'] = pygame.image.load('assets/sprites/gameover.jpg').convert_alpha()
         # message sprite for welcome screen
-        self.IMAGES['message'] = pygame.image.load('assets/sprites/message.png').convert_alpha()
+        self.IMAGES['message'] = pygame.image.load('assets/sprites/message.jpg').convert_alpha()
         # base (ground) sprite
-        self.IMAGES['base'] = pygame.image.load('assets/sprites/base.png').convert_alpha()
+        self.IMAGES['base'] = pygame.image.load('assets/sprites/base.jpg').convert_alpha()
 
     def loadSound(self):
         """
@@ -361,13 +367,27 @@ class GameEnv:
             self.SCREEN.blit(self.IMAGES['numbers'][digit], (Xoffset, self.SCREENHEIGHT * 0.1))
             Xoffset += self.IMAGES['numbers'][digit].get_width()
 
+def image_process():
+    import os
+    from PIL import Image
+    path = 'assets/sprites/'
+    pic_list = os.listdir(path)
+    for pic in pic_list:
+        if pic.endswith('png'):
+            img = Image.open(os.path.join(path, pic)).convert('RGB')\
+                .save(os.path.join(path, pic.replace('png', 'jpg')))
+        print(pic)
+
+
 if __name__ == '__main__':
+    # image_process()
     action_space = [[1, 0], [0, 1], [1,0]]
     env = GameEnv()
     env.reset()
     while True:
         # next_state, reward, _ = env.step([1, 0])
-        next_state, reward, _ = env.step(random.choice(action_space))
+        next_state, reward, _ = env.step(1)
+        print(reward)
         env.render()
         if _:
             break
