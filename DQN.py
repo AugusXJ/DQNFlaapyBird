@@ -114,7 +114,7 @@ tau = 0.001                 # target DQN向主DQN学习的速率
 img_height = 84
 img_weight = 84
 stepDrop = (startE - endE) / anneling_episodes
-e = tf.Variable(initial_value=startE, trainable=False)
+e = endE.assign(endE - stepDrop)
 drop_e = tf.subtract(e, tf.constant(stepDrop))
 total_steps = tf.Variable(initial_value=0, trainable=False)
 step_plus = total_steps.assign_add(1)
@@ -160,8 +160,6 @@ def test():
         j = 0  # 步数
         while j < max_epLength:
             j += 1
-            if j == 48:
-                s1 = 's'
             a = sess.run(mainQN.predict, feed_dict={mainQN.scalarInput: [s]})[0]
             s1, r, d = env.step(a)
             env.render()
@@ -217,7 +215,6 @@ def train():
                 # print(sess.run(total_steps))
                 episodeBuffer.add(np.reshape(np.array([s, a, r, s1, d]), [1, 5]))
                 if sess.run(total_steps) > pre_train_steps:
-                    # print("training................")
                     if sess.run(e) > endE:
                         sess.run(drop_e)               # 降低学习率
                     if sess.run(total_steps) % update_freq == 0:                                # 开始训练
