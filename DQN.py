@@ -105,7 +105,7 @@ startE = 1.                  # 初始时执行随机行为的概率
 endE = 0.1                  # 最终执行随机行为的概率
 anneling_episodes = 500.     # 从初始随机行为到最终随机行为所需eposide
 num_episodes = 10000        # 总共需要多少次游戏
-pre_train_steps = 10000     # 正式使用DQN选择action前需要多少步随机action
+pre_train_steps = 100     # 正式使用DQN选择action前需要多少步随机action
 max_epLength = 50000           # 每个episode进行多少步action
 load_model = True          # 是否读取之前训练的模型
 path = "./dqn"              # 模型存储的路径
@@ -114,8 +114,8 @@ tau = 0.001                 # target DQN向主DQN学习的速率
 img_height = 84
 img_weight = 84
 stepDrop = (startE - endE) / anneling_episodes
-e = endE.assign(endE - stepDrop)
-drop_e = tf.subtract(e, tf.constant(stepDrop))
+e = tf.Variable(initial_value=1., trainable=False)
+drop_e = e.assign(e - tf.constant(stepDrop, dtype=tf.float32))
 total_steps = tf.Variable(initial_value=0, trainable=False)
 step_plus = total_steps.assign_add(1)
 
@@ -191,7 +191,7 @@ def train():
         last_eposide = 0
         if load_model is True:
             print('Loading Model ......')
-            last_eposide = loader(saver, sess, path)
+            last_eposide = loader(saver, sess, path) + 25
         sess.run(init)
         updateTarget(targetOps, sess)
         for i in range(last_eposide, num_episodes+1):
@@ -240,6 +240,8 @@ def train():
             rList.append(rAll)
             if i > 0 and i % 25 == 0:
                 print('episode', i, ', average reward of last 25 episode', np.mean(rList[-25:]))
+                print('e: {}'.format(sess.run(e)))
+                print('total_step: {}'.format(sess.run(total_steps)))
             if i > 0 and i % 1000 == 0:
                 saver.save(sess, path + '/model.ckpt-' + str(i))
                 print("Saved Model")
@@ -247,4 +249,5 @@ def train():
 
 
 if __name__ == '__main__':
-    train()
+    # train()
+    test()
